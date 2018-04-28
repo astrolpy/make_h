@@ -80,27 +80,22 @@ def get_element(star_sign):
 
     return element, traits
 
+def get_modality(star_sign):
+
+    if (star_sign == 'aries') or (star_sign == 'libra') or (star_sign == 'capricorn') or (star_sign == 'cancer'):
+	modality = 'cardinal'
+	traits = 'Action; dynamic; initiative; great force'
+    elif (star_sign == 'taurus') or (star_sign == 'leo') or (star_sign == 'aquarius') or (star_sign == 'scorpio'):
+	modality = 'fixed'
+ 	traits = 'Resistance to change; great willpower; inflexible	'
+    else:
+ 	modality = 'mutable'
+	traits = 'Adaptability; flexible; resourceful'
+
+    return modality, traits
 day = 10
 for month in range(1,13):
     star_sign = get_star_sign(month, day)
-    element, traits = get_element(star_sign)
+    element, traits = get_modality(star_sign)
     print star_sign, element, traits
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-print get_star_sign(6, 19)
